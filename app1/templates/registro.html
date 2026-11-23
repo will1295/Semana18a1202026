@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .campo{
+            margin-bottom: 12px;
+        }
+        form{
+            background-color:#BAE8DB;
+            border:1px solid black;
+            width: auto;
+            
+            
+        }
+    </style>
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crear cuenta nueva</h1>
+    <form action="" method="post">
+        {%csrf_token%}
+        <div class="campo">
+            <label for="">Usuario</label>
+            {{form.username}}
+        </div>
+        <div class="campo">
+            <label for="">Contraseña</label>
+            {{form.password1}}
+        </div>
+        
+        <div class="campo">
+            <label for="">Confirmar contraseña</label>
+            {{form.password2}}
+        </div>
+        
+        <button type="submit">Registrarse</button>
+    </form>
+    <p>Ya tienes cuenta? Inicia sesión <a href="{%url 'login'%}">Iniciar Sesion</a></p>
+</body>
+</html>
